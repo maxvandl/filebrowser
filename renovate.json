@@ -14,7 +14,7 @@
     }
   ],
 
-  "gitlabci": {
+  "dockerfile": {
     "fileMatch": [
       "(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"
     ],
