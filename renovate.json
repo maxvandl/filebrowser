@@ -12,4 +12,8 @@
     }
   ],
 
+  "gitlabci": {
+    "fileMatch": ["^compose(.*).yml$"],
+    "pinDigests": true
+  }
 }
