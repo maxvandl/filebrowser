@@ -12,7 +12,5 @@
     ],
     "labels": ["docker-env", "renovate"],
     "prHourlyLimit": 3,
-    "timezone": "auto",
-    "group": "monorepo",
     "enabled": true
   }
