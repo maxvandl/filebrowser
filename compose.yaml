@@ -3,7 +3,7 @@ version: '3.9'
 
 services:
   filebrowser:
-    image: filebrowser/filebrowser:s6
+    image: filebrowser/filebrowser:${FILEBROWSER_VER}
     container_name: filebrowser
     volumes:
       - "${PWD}/files/:/srv/"
@@ -28,7 +28,7 @@ services:
      - "traefik.http.routers.{$PROJECT_NAME}.priority=100"
 
   traefik:
-    image: "traefik:latest"
+    image: "traefik:${TRAEFIK_VER}"
     restart: "unless-stopped"
     ports:
        - "80:80"
