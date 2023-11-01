@@ -6,14 +6,18 @@
 
   "regexManagers": [
     {
-        "fileMatch": ["^compose(.*).yml$"],
+      "fileMatch": [
+        "(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"
+      ],
         "matchStrings": ["image: (?<depName>.*?):\\${(?:.*):?-(?<currentValue>.*?)}"],
         "datasourceTemplate": "docker"
     }
   ],
 
   "gitlabci": {
-    "fileMatch": ["^compose(.*).yml$"],
+    "fileMatch": [
+      "(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"
+    ],
     "pinDigests": true
   }
 }
