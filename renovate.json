@@ -1,23 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-
-  "prHourlyLimit": 4,
-
-  "regexManagers": [
+  "extends": ["config:base"],
+  "platform": "github",
+  "baseBranch": "main",
+  "packageRules": [
     {
-      "fileMatch": [
-        "(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"
-      ],
-        "matchStrings": ["image: (?<depName>.*?):\\${(?:.*):?-(?<currentValue>.*?)}"],
-        "datasourceTemplate": "docker"
+      "packageNames": ["*"],
+      "automerge": false,
+      "schedule": ["on monday"]
     }
   ],
-
-  "dockerfile": {
-    "fileMatch": [
-      "(^|/)(?:docker-)?compose[^/]*\\.ya?ml$"
-    ],
-    "pinDigests": true
-  }
+  "docker-compose": {
+    "fileMatch": ["(^|/)[a-z]*\.(?:docker-)?compose[^/]*\.y?ml$"]
+  },
+  "depTypes": ["*"],
+  "separateMajorMinor": true
 }
